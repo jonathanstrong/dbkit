@@ -12,10 +12,7 @@ use super::error::DBError;
 ///
 /// Takes into account SIMD (AVX2) types that will used for operations.
 ///
-// RUST IS FRUSTRATING:
-// mem::size_of is not const
-// const MIN_ALIGN: usize = mem::size_of::<usize>();
-pub const MIN_ALIGN: usize = 32;
+pub const MIN_ALIGN: usize = mem::size_of::<usize>();
 
 /// Allocator trait, used through out the operations in dbkit.
 ///
